@@ -12,7 +12,7 @@ export const useInflation = () => {
   const { staking } = useStaking();
   const { params } = network;
   const { lastTotalStake } = staking;
-  const { totalIssuance, auctionCounter } = metrics;
+  const { totalIssuance } = metrics;
 
   const {
     auctionAdjust,
@@ -25,15 +25,15 @@ export const useInflation = () => {
 
   const BN_MILLION = new BN('1000000');
 
-  const calculateInflation = (totalStaked: BN, numAuctions: BN) => {
+  const calculateInflation = (totalStaked: BN) => {
     const stakedFraction =
       totalStaked.isZero() || totalIssuance.isZero()
         ? 0
         : totalStaked.mul(BN_MILLION).div(totalIssuance).toNumber() /
           BN_MILLION.toNumber();
-    const idealStake =
-      stakeTarget -
-      Math.min(auctionMax, numAuctions.toNumber()) * auctionAdjust;
+    // Need double-check with stake logic
+    const idealStake = stakeTarget;
+
     const idealInterest = maxInflation / idealStake;
     const inflation =
       100 *
@@ -52,7 +52,7 @@ export const useInflation = () => {
     };
   };
 
-  return calculateInflation(lastTotalStake, auctionCounter);
+  return calculateInflation(lastTotalStake);
 };
 
 export default useInflation;

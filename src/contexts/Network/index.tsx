@@ -53,7 +53,7 @@ export const NetworkMetricsProvider = ({
         [
           api.query.staking.activeEra,
           api.query.balances.totalIssuance,
-          api.query.auctions.auctionCounter,
+          // api.query.auctions.auctionCounter,
         ],
         ([activeEra, _totalIssuance, _auctionCounter]: AnyApi) => {
           // determine activeEra: toString used as alternative to `toHuman`, that puts commas in numbers
@@ -70,7 +70,7 @@ export const NetworkMetricsProvider = ({
           const _metrics = {
             activeEra: _activeEra,
             totalIssuance: _totalIssuance.toBn(),
-            auctionCounter: new BN(_auctionCounter.toString()),
+            // auctionCounter: new BN(_auctionCounter.toString()),
           };
           setMetrics(_metrics);
         }
