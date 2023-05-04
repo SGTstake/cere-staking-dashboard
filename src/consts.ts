@@ -7,9 +7,9 @@ import { stringToU8a } from '@polkadot/util';
  * Global Constants
  */
 export const URI_PREFIX = '/dashboard';
-export const TITLE_DEFAULT = 'Polkadot Staking Dashboard';
-export const DAPP_NAME = 'polkadot_staking_dashboard';
-export const POLKADOT_URL = 'https://polkadot.network';
+export const TITLE_DEFAULT = 'Cere Staking Dashboard';
+export const DAPP_NAME = 'cere_staking_dashboard';
+export const CERE_URL = 'https://cere.network/';
 
 export const POLKADOT_ENDPOINT = 'wss://rpc.polkadot.io';
 export const WESTEND_ENDPOINT = 'wss://westend-rpc.polkadot.io';
@@ -71,7 +71,7 @@ export const MEDIUM_FONT_SiZE_MAX_WIDTH = 1600;
 /*
  * Toggle-able services
  */
-export const SERVICES = ['subscan', 'binance_spot'];
+export const SERVICES = [];
 
 /*
  * Fallback config values
@@ -112,7 +112,7 @@ export const DEFAULT_PARAMS = {
   auctionAdjust: 0,
   auctionMax: 0,
   falloff: 0.05,
-  maxInflation: 0.1,
-  minInflation: 0.025,
-  stakeTarget: 0.5,
+  stakeTarget: 0.2,
+  maxInflation: 0.05,
+  minInflation: 0.0001,
 };

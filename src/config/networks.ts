@@ -8,7 +8,7 @@ const cereMainnet = {
   colors: {
     primary: {
       light: 'rgb(183, 174, 255)',
-      dark: '#EC6E79',
+      dark: 'rgb(183, 174, 255)',
     },
     secondary: {
       light: '#Ec8f6e',
@@ -43,15 +43,7 @@ const cereMainnet = {
   features: {
     pools: false,
   },
-  params: {
-    ...DEFAULT_PARAMS,
-    auctionAdjust: 0,
-    auctionMax: 0,
-    falloff: 0.05,
-    stakeTarget: 0.2,
-    maxInflation: 0.05,
-    minInflation: 0.0001,
-  },
+  params: DEFAULT_PARAMS,
 };
 
 const cereTestnet = {

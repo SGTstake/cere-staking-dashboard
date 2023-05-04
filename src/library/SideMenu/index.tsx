@@ -20,7 +20,7 @@ import { ReactComponent as CogOutlineSVG } from 'img/cog-outline.svg';
 import { ReactComponent as LogoGithubSVG } from 'img/logo-github.svg';
 import {
   URI_PREFIX,
-  POLKADOT_URL,
+  CERE_URL,
   SIDE_MENU_STICKY_THRESHOLD,
   CONNECTION_SYMBOL_COLORS,
 } from 'consts';
@@ -136,7 +136,7 @@ export const SideMenu = () => {
       <section>
         <LogoWrapper
           onClick={() => {
-            window.open(POLKADOT_URL, '_blank');
+            window.open(CERE_URL, '_blank');
           }}
           minimised={sideMenuMinimised}
         >
