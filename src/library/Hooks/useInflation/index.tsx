@@ -14,14 +14,7 @@ export const useInflation = () => {
   const { lastTotalStake } = staking;
   const { totalIssuance } = metrics;
 
-  const {
-    auctionAdjust,
-    auctionMax,
-    falloff,
-    maxInflation,
-    minInflation,
-    stakeTarget,
-  } = params;
+  const { falloff, maxInflation, minInflation, stakeTarget } = params;
 
   const BN_MILLION = new BN('1000000');
 
@@ -31,7 +24,9 @@ export const useInflation = () => {
         ? 0
         : totalStaked.mul(BN_MILLION).div(totalIssuance).toNumber() /
           BN_MILLION.toNumber();
-    // Need double-check with stake logic
+
+    // The idealStake is equal to stakeTarget since
+    // Cere Network doesn't provide auctionMax, numAuctions and auctionAdjust so far.
     const idealStake = stakeTarget;
 
     const idealInterest = maxInflation / idealStake;
