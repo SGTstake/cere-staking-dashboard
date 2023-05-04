@@ -13,8 +13,8 @@ export const POLKADOT_URL = 'https://polkadot.network';
 
 export const POLKADOT_ENDPOINT = 'wss://rpc.polkadot.io';
 export const WESTEND_ENDPOINT = 'wss://westend-rpc.polkadot.io';
-export const DEFAULT_NETWORK = 'polkadot';
-export const ACTIVE_NETWORK = 'polkadot';
+export const DEFAULT_NETWORK = 'cereMainnet';
+export const ACTIVE_NETWORK = 'cereMainnet';
 
 /*
  * Data Structure Helpers
