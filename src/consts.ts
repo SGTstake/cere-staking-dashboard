@@ -6,7 +6,7 @@ import { stringToU8a } from '@polkadot/util';
 /*
  * Global Constants
  */
-export const URI_PREFIX = '/dashboard';
+export const URI_PREFIX = '';
 export const TITLE_DEFAULT = 'Cere Staking Dashboard';
 export const DAPP_NAME = 'cere_staking_dashboard';
 export const CERE_URL = 'https://cere.network/';
