@@ -77,11 +77,11 @@ export const SERVICES = [];
  * Fallback config values
  */
 export const MAX_NOMINATIONS = 16;
-export const BONDING_DURATION = 28;
+export const BONDING_DURATION = 3;
 export const SESSIONS_PER_ERA = 6;
 export const MAX_NOMINATOR_REWARDED_PER_VALIDATOR = 256;
 export const VOTER_SNAPSHOT_PER_BLOCK = 22500;
-export const MAX_ELECTING_VOTERS = 22500;
+export const MAX_ELECTING_VOTERS = 10000;
 export const EXPECTED_BLOCK_TIME = 6000;
 
 /*
