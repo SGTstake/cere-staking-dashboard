@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 import { Networks } from 'types';
 import { DEFAULT_PARAMS } from 'consts';
-import { ReactComponent as CereLogoSvg } from 'img/cere.svg';
+import { ReactComponent as CereLogoSvg } from 'img/cere_logo.svg';
+import { ReactComponent as CereIconSvg } from 'img/cere_icon.svg';
 
 const cereMainnet = {
   name: 'Cere Mainnet',
@@ -26,13 +27,13 @@ const cereMainnet = {
   ss58: 54,
   // It's a draft icons set
   brand: {
-    icon: CereLogoSvg,
+    icon: CereIconSvg,
     logo: {
       svg: CereLogoSvg,
       width: '8.5rem',
     },
     inline: {
-      svg: CereLogoSvg,
+      svg: CereIconSvg,
       size: '1.15rem',
     },
   },
