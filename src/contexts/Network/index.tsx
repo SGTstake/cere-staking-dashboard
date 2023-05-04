@@ -50,12 +50,8 @@ export const NetworkMetricsProvider = ({
 
     if (isReady) {
       const _unsub = await api.queryMulti(
-        [
-          api.query.staking.activeEra,
-          api.query.balances.totalIssuance,
-          // api.query.auctions.auctionCounter,
-        ],
-        ([activeEra, _totalIssuance, _auctionCounter]: AnyApi) => {
+        [api.query.staking.activeEra, api.query.balances.totalIssuance],
+        ([activeEra, _totalIssuance]: AnyApi) => {
           // determine activeEra: toString used as alternative to `toHuman`, that puts commas in numbers
           let _activeEra = activeEra
             .unwrapOrDefault({
@@ -70,7 +66,6 @@ export const NetworkMetricsProvider = ({
           const _metrics = {
             activeEra: _activeEra,
             totalIssuance: _totalIssuance.toBn(),
-            // auctionCounter: new BN(_auctionCounter.toString()),
           };
           setMetrics(_metrics);
         }
@@ -85,7 +80,6 @@ export const NetworkMetricsProvider = ({
         metrics: {
           activeEra: metrics.activeEra,
           totalIssuance: metrics.totalIssuance,
-          auctionCounter: metrics.auctionCounter,
         },
       }}
     >

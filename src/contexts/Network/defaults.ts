@@ -10,7 +10,6 @@ export const metrics: NetworkMetrics = {
     start: 0,
   },
   totalIssuance: new BN(0),
-  auctionCounter: new BN(0),
 };
 
 export const defaultNetworkContext: NetworkMetricsContextInterface = {
