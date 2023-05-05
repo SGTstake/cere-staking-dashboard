@@ -16,7 +16,6 @@ import { useModal } from 'contexts/Modal';
 import { useApi } from 'contexts/Api';
 import { useBalances } from 'contexts/Balances';
 import { useStaking } from 'contexts/Staking';
-import { ReactComponent as CogOutlineSVG } from 'img/cog-outline.svg';
 import { ReactComponent as LogoGithubSVG } from 'img/logo-github.svg';
 import {
   URI_PREFIX,
@@ -231,7 +230,7 @@ export const SideMenu = () => {
           type="button"
           onClick={() =>
             window.open(
-              'https://github.com/rossbulat/polkadot-staking-experience',
+              'https://github.com/Cerebellum-Network/staking-dashboard/',
               '_blank'
             )
           }
