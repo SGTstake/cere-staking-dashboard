@@ -23,7 +23,7 @@ const cereMainnet = {
   endpoint: 'wss://archive.mainnet.cere.network/ws',
   subscanEndpoint: '',
   unit: 'CERE',
-  units: 12,
+  units: 10,
   ss58: 54,
   // It's a draft icons set
   brand: {
