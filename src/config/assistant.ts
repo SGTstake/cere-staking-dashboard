@@ -45,7 +45,7 @@ export const ASSISTANT_CONFIG: AssistantConfig = [
       {
         title: 'Inflation',
         description: [
-          'DOT is inflationary; there is no maximum number of DOT.',
+          'CERE is inflationary; there is no maximum number of CERE.',
           'Inflation is designed to be approximately 10% annually, with validator rewards being a function of the amount staked and the remainder going to treasury.',
         ],
       },
