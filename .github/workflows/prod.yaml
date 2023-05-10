@@ -1,0 +1,21 @@
+name: Release to dev
+on:
+  push:
+    branches:
+      - dev-cere
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-deploy:
+    uses: Cerebellum-Network/reusable-workflows/.github/workflows/deploy-to-cloudfront.yaml@master
+    with:
+      build_container: 'node:16-buster'
+      install_packages_command: 'yarn'
+      build_command: 'yarn run build'
+      path_to_static_files_to_upload: 'build'
+      aws_account_id: ${{ vars.PRD_NETWORK_AWS_ACCOUNT_ID }}
+      s3_bucket_name: "staking.network.aws.cere.io"
