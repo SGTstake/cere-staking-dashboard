@@ -12,8 +12,6 @@ import { useModal } from 'contexts/Modal';
 import { useSubmitExtrinsic } from 'library/Hooks/useSubmitExtrinsic';
 import { useConnect } from 'contexts/Connect';
 import { Warning } from 'library/Form/Warning';
-import { usePoolMemberships } from 'contexts/Pools/PoolMemberships';
-import { useActivePool } from 'contexts/Pools/ActivePool';
 import {
   HeadingWrapper,
   FooterWrapper,
@@ -27,8 +25,6 @@ export const ChangeNominations = () => {
   const { activeAccount, accountHasSigner } = useConnect();
   const { getBondedAccount, getAccountNominations } = useBalances();
   const { setStatus: setModalStatus, config } = useModal();
-  const { membership } = usePoolMemberships();
-  const { poolNominations, isNominator } = useActivePool();
 
   const { nominations: newNominations, provider, bondType } = config;
 
@@ -37,10 +33,7 @@ export const ChangeNominations = () => {
   const controller = getBondedAccount(activeAccount);
   const signingAccount = isPool ? activeAccount : controller;
 
-  const nominations =
-    isPool === true
-      ? poolNominations.targets
-      : getAccountNominations(activeAccount);
+  const nominations = getAccountNominations(activeAccount);
   const removing = nominations.length - newNominations.length;
   const remaining = newNominations.length;
 
@@ -52,20 +45,10 @@ export const ChangeNominations = () => {
     setValid(nominations.length > 0);
   }, [nominations]);
 
-  // ensure selected membership and targests are valid
-  let isValid = nominations.length > 0;
-  if (isPool) {
-    isValid =
-      (membership && isNominator() && newNominations.length > 0) ?? false;
-  }
-  useEffect(() => {
-    setValid(isValid);
-  }, [isValid]);
-
   // tx to submit
   const tx = () => {
     let _tx = null;
-    if (!valid || !api || !membership) {
+    if (!valid || !api) {
       return _tx;
     }
 
@@ -76,9 +59,7 @@ export const ChangeNominations = () => {
             Id: item,
           }
     );
-    if (isPool && remaining !== 0) {
-      _tx = api.tx.nominationPools.nominate(membership.poolId, targetsToSubmit);
-    } else if (isStaking && remaining !== 0) {
+    if (isStaking && remaining !== 0) {
       _tx = api.tx.staking.nominate(targetsToSubmit);
     } else if (isStaking && remaining === 0) {
       _tx = api.tx.staking.chill();
