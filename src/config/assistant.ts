@@ -46,7 +46,7 @@ export const ASSISTANT_CONFIG: AssistantConfig = [
         title: 'Inflation',
         description: [
           'CERE is inflationary; there is no maximum number of CERE.',
-          'Inflation is designed to be approximately 10% annually, with validator rewards being a function of the amount staked and the remainder going to treasury.',
+          'Inflation is designed to be in the range of 0.01% to 5% annually, with validator rewards being a function of the amount staked and the remainder going to treasury.',
         ],
       },
       {
