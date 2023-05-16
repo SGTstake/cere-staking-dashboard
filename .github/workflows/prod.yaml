@@ -2,7 +2,7 @@ name: Release to prod
 on:
   push:
     branches:
-      - dev-cere
+      - master-cere
   workflow_dispatch:
 
 permissions:
