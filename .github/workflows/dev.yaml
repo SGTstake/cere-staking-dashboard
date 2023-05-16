@@ -11,6 +11,8 @@ permissions:
 
 jobs:
   build-and-deploy:
+    env:
+      REACT_APP_INCLUDE_TESTNET: true
     uses: Cerebellum-Network/reusable-workflows/.github/workflows/deploy-to-cloudfront.yaml@master
     with:
       build_container: 'node:16-buster'
