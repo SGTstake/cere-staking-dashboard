@@ -8,7 +8,6 @@ import { ModalWrapper, ContentWrapper, HeightWrapper } from './Wrappers';
 import { ConnectAccounts } from './ConnectAccounts';
 import { ValidatorMetrics } from './ValidatorMetrics';
 import { UpdateController } from './UpdateController';
-import { Settings } from './Settings';
 import { UpdateBond } from './UpdateBond';
 import { UpdatePayee } from './UpdatePayee';
 import { ChangeNominations } from './ChangeNominations';
@@ -101,7 +100,6 @@ export const Modal = () => {
           <ContentWrapper ref={modalRef}>
             {modal === 'ConnectAccounts' && <ConnectAccounts />}
             {modal === 'ValidatorMetrics' && <ValidatorMetrics />}
-            {modal === 'Settings' && <Settings />}
             {modal === 'UpdateController' && <UpdateController />}
             {modal === 'UpdateBond' && <UpdateBond />}
             {modal === 'UpdatePayee' && <UpdatePayee />}

@@ -1,10 +1,4 @@
-# Polkadot Staking Dashboard [Beta]
-
-## Deployment
-
-Staking dashboard is live on [staking.polkadot.network/dashboard](https://staking.polkadot.network/dashboard)
-
-<img width="1617" alt="Screenshot 2022-07-24 at 15 34 35" src="https://user-images.githubusercontent.com/13929023/180651950-e7b5e90f-b32c-4c41-85a1-11c01bb05c8e.png">
+# Cere Staking Dashboard [Beta]
 
 # Validator Entity Setup Guide
 

@@ -3,16 +3,12 @@
 
 import { useState, useRef } from 'react';
 import { useApi } from 'contexts/Api';
-import { useUi } from 'contexts/UI';
-import { usePrices } from 'library/Hooks/usePrices';
 import { useOutsideAlerter } from 'library/Hooks';
 import { Wrapper, Summary, NetworkInfo, Separator } from './Wrappers';
 import { Status } from './Status';
 
 export const NetworkBar = () => {
-  const { services } = useUi();
   const { network } = useApi();
-  const prices = usePrices();
 
   // currently not in use
   const [open, setOpen] = useState(false);
@@ -80,29 +76,7 @@ export const NetworkBar = () => {
           )}
         </section>
         <section>
-          <div className="hide-small">
-            {services.includes('binance_spot') && (
-              <>
-                <div className="stat">
-                  <span
-                    className={`change${
-                      prices.change < 0
-                        ? ' neg'
-                        : prices.change > 0
-                        ? ' pos'
-                        : ''
-                    }`}
-                  >
-                    {prices.change < 0 ? '' : prices.change > 0 ? '+' : ''}
-                    {prices.change}%
-                  </span>
-                </div>
-                <div className="stat">
-                  1 {network.api.unit} / {prices.lastPrice} USD
-                </div>
-              </>
-            )}
-          </div>
+          <div className="hide-small" />
         </section>
       </Summary>
 
