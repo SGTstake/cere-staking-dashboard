@@ -96,6 +96,9 @@ REACT_APP_ORGANISATION="© Parity Technologies"
 
 # provide a privacy policy url in the network bar
 REACT_APP_PRIVACY_URL=https://www.parity.io/privacy/
+
+# include the testnet configuration
+REACT_APP_INCLUDE_TESTNET=true
 ```
 ## Config Files
 There are some ad-hoc files defining app configuration where needed. These just provide a means of bootstrapping app data, and further abstraction could be explored in the future.

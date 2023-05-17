@@ -9,6 +9,9 @@ permissions:
   id-token: write
   contents: read
 
+env:
+  REACT_APP_INCLUDE_TESTNET: false
+
 jobs:
   build-and-deploy:
     uses: Cerebellum-Network/reusable-workflows/.github/workflows/deploy-to-cloudfront.yaml@master
