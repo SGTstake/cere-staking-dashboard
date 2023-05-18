@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2023-05-18
 
+## Added
+- Improved network state initialization and error handling
+
 ### Changed
 
 - Fixed Workflow for Dev, Stage and Prod
