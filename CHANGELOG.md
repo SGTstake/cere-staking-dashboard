@@ -8,12 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.1] - 2023-05-18
 
 ## Added
-- Improved network state initialization and error handling
+
+- Improved network initialization and error handling. Prevents application crashes caused by incorrect localStorage network. Added default network for this scenario.
 
 ### Changed
 
-- Fixed Workflow for Dev, Stage and Prod
-- Set `REACT_APP_INCLUDE_TESTNET` env variable to `false` for Stage
+- Improved workflow for deploying to development, staging, and production environments. Fixed issue with `REACT_APP_INCLUDE_TESTNET` variable.
+- Set the `REACT_APP_INCLUDE_TESTNET` environment variable to `false` for the Stage environment.
 
 ## [1.0.0] - 2023-05-17
 
