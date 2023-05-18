@@ -1,6 +1,6 @@
 {
   "name": "polkadot-staking-dashboard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "apache-2.0",
   "private": false,
   "dependencies": {
