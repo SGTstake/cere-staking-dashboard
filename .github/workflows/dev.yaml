@@ -9,16 +9,13 @@ permissions:
   id-token: write
   contents: read
 
-env:
-  REACT_APP_INCLUDE_TESTNET: true
-
 jobs:
   build-and-deploy:
     uses: Cerebellum-Network/reusable-workflows/.github/workflows/deploy-to-cloudfront.yaml@master
     with:
       build_container: 'node:16-buster'
       install_packages_command: 'yarn'
-      build_command: 'yarn run build'
+      build_command: 'export REACT_APP_INCLUDE_TESTNET=true; yarn run build'
       path_to_static_files_to_upload: 'build'
       aws_account_id: ${{ vars.DEV_NETWORK_AWS_ACCOUNT_ID }}
       s3_bucket_name: "staking-dev.network-dev.aws.cere.io"

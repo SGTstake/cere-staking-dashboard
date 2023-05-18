@@ -12,6 +12,7 @@ import {
   API_ENDPOINTS,
   MAX_ELECTING_VOTERS,
   EXPECTED_BLOCK_TIME,
+  DEFAULT_NETWORK,
 } from 'consts';
 import { NETWORKS } from 'config/networks';
 import {
@@ -37,12 +38,16 @@ export const APIProvider = ({ children }: { children: React.ReactNode }) => {
   const [api, setApi] = useState<ApiPromise | null>(null);
 
   // network state
-  const _name: NetworkName =
-    (localStorage.getItem('network') as NetworkName) ?? NetworkName.Polkadot;
+  const _name = localStorage.getItem('network') as NetworkName;
+  const initialMeta = NETWORKS[_name] || NETWORKS[DEFAULT_NETWORK];
+
+  if (!_name || !NETWORKS[_name]) {
+    localStorage.setItem('network', DEFAULT_NETWORK);
+  }
 
   const [network, setNetwork] = useState<NetworkState>({
-    name: _name,
-    meta: NETWORKS[localStorage.getItem('network') as NetworkName],
+    name: _name || DEFAULT_NETWORK,
+    meta: initialMeta,
   });
 
   // constants state
