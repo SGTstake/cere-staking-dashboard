@@ -70,26 +70,20 @@ export const CereStatsProvider = ({
       return [];
     }
 
-    // replace with your era points GraphQL query
-    const ERA_POINTS_QUERY = `
-      subscription EraPoints($stashAddress: String) {
-        era_points(
-          where: { stash_address: { _eq: $stashAddress } }
-        ) {
-          stash_address
-          era
-          points
-        }
-      }
-    `;
-
     const { data } = await client.query({
-      // @ts-ignore
-      query: ERA_POINTS_QUERY,
-      variables: { address, era },
+      query: gql`
+        query EraPoints($stashAddress: String) {
+          era_points(where: { stash_address: { _eq: $stashAddress } }) {
+            stash_address
+            era
+            points
+          }
+        }
+      `,
+      variables: { stashAddress: address },
     });
 
-    return data.eraPoints; // replace with the actual key in the response
+    return data.era_points;
   };
 
   const fetchPayouts = async () => {
