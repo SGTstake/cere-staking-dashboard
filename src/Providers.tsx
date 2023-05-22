@@ -28,6 +28,7 @@ import { ValidatorsProvider } from './contexts/Validators';
 import { UIProvider } from './contexts/UI';
 import { useTheme } from './contexts/Themes';
 import { SessionEraProvider } from './contexts/SessionEra';
+import { CereStatsProvider } from './contexts/CereStats';
 
 export const WrappedRouter = () => (
   <Wrapper>
@@ -62,6 +63,7 @@ export const Providers = withProviders(
   ActivePoolProvider,
   ValidatorsProvider,
   UIProvider,
+  CereStatsProvider,
   SubscanProvider,
   MenuProvider,
   TooltipProvider,

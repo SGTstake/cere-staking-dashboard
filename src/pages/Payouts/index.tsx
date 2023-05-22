@@ -26,8 +26,11 @@ import { BN } from 'bn.js';
 import { PageProps } from '../types';
 import { PayoutList } from './PayoutList';
 import LastEraPayoutStatBox from './Stats/LastEraPayout';
+import { useCereStats } from '../../contexts/CereStats';
 
 export const Payouts = (props: PageProps) => {
+  const cereStats = useCereStats();
+  console.log('cereStats data is', cereStats);
   const { payouts, poolClaims } = useSubscan();
   const { isSyncing, services } = useUi();
   const { inSetup } = useStaking();
