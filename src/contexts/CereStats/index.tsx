@@ -93,13 +93,12 @@ export const CereStatsProvider = ({
 
     const { data } = await client.query({
       query: gql`
-        query Event($accountId: String!) {
+        query RewardEvents($activeAccount: String) {
           event(
-            order_by: { block_number: desc }
             where: {
               section: { _eq: "staking" }
               method: { _like: "Reward%" }
-              data: { _like: $accountId }
+              data: { _regex: $activeAccount }
             }
           ) {
             block_number
@@ -108,7 +107,9 @@ export const CereStatsProvider = ({
           }
         }
       `,
-      variables: { accountId: activeAccount },
+      variables: {
+        activeAccount,
+      },
     });
 
     setPayouts(data.payouts); // replace with the actual key in the response
