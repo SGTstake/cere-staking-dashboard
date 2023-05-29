@@ -86,6 +86,27 @@ export const CereStatsProvider = ({
     return data.era_points;
   };
 
+  const normalizePayouts = (
+    payoutData: { block_number: number; data: string; timestamp: number }[]
+  ) => {
+    return payoutData.map(({ block_number, data, timestamp }) => {
+      let amount = 0;
+
+      // Using regex to extract the second parameter from the data string
+      const match = data.match(/,\s*(\d+)\s*\]/);
+
+      if (match && match[1]) {
+        amount = parseInt(match[1], 10);
+      }
+
+      return {
+        amount,
+        block_num: block_number,
+        block_timestamp: timestamp * 1000,
+      };
+    });
+  };
+
   const fetchPayouts = async () => {
     if (!activeAccount || !client) {
       return;
@@ -112,7 +133,8 @@ export const CereStatsProvider = ({
       },
     });
 
-    setPayouts(data.payouts); // replace with the actual key in the response
+    // @ts-ignore
+    setPayouts(normalizePayouts(data.event));
   };
 
   if (!client) {
