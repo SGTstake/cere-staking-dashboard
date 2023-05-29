@@ -89,22 +89,24 @@ export const CereStatsProvider = ({
   const normalizePayouts = (
     payoutData: { block_number: number; data: string; timestamp: number }[]
   ) => {
-    return payoutData.map(({ block_number, data, timestamp }) => {
-      let amount = 0;
+    return payoutData
+      .map(({ block_number, data, timestamp }) => {
+        let amount = 0;
 
-      // Using regex to extract the second parameter from the data string
-      const match = data.match(/,\s*(\d+)\s*\]/);
+        // Using regex to extract the second parameter from the data string
+        const match = data.match(/,\s*(\d+)\s*\]/);
 
-      if (match && match[1]) {
-        amount = parseInt(match[1], 10);
-      }
+        if (match && match[1]) {
+          amount = parseInt(match[1], 10);
+        }
 
-      return {
-        amount,
-        block_num: block_number,
-        block_timestamp: timestamp * 1000,
-      };
-    });
+        return {
+          amount,
+          block_num: block_number,
+          block_timestamp: timestamp,
+        };
+      })
+      .sort((a, b) => b.block_timestamp - a.block_timestamp);
   };
 
   const fetchPayouts = async () => {
