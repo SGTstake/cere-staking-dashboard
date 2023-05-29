@@ -98,7 +98,7 @@ export const CereStatsProvider = ({
             where: {
               section: { _eq: "staking" }
               method: { _like: "Reward%" }
-              data: { _regex: $activeAccount }
+              data: { _like: $activeAccount }
             }
           ) {
             block_number
@@ -108,7 +108,7 @@ export const CereStatsProvider = ({
         }
       `,
       variables: {
-        activeAccount,
+        activeAccount: `%${activeAccount}%`,
       },
     });
 
