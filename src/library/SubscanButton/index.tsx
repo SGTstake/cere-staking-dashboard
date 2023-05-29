@@ -41,7 +41,7 @@ export const SubscanButton = () => {
         transform="shrink-2"
         style={{ marginRight: '0.3rem' }}
       />
-      Subscan
+      Cere Stats API
     </Wrapper>
   );
 };

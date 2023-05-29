@@ -71,7 +71,8 @@ export const MEDIUM_FONT_SiZE_MAX_WIDTH = 1600;
 /*
  * Toggle-able services
  */
-export const SERVICES = [];
+// TODO: Add 'cereStats' in the future.
+export const SERVICES = ['subscan'];
 
 /*
  * Fallback config values
