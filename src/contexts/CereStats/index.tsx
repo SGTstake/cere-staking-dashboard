@@ -35,7 +35,9 @@ const useApolloClient = (endpoint: Network['cereStatsEndpoint']) => {
   return client;
 };
 
-const useEraPoints = (client: ApolloClient<NormalizedCacheObject> | null) => {
+const useFetchEraPoints = (
+  client: ApolloClient<NormalizedCacheObject> | null
+) => {
   const fetchEraPoints = async (address: string) => {
     if (!address || !client) {
       return [];
@@ -144,7 +146,7 @@ export const CereStatsProvider = ({
   const { activeAccount } = useConnect();
 
   const client = useApolloClient(network.cereStatsEndpoint);
-  const fetchEraPoints = useEraPoints(client);
+  const fetchEraPoints = useFetchEraPoints(client);
   const payouts = usePayouts(client, activeAccount);
 
   if (!client) {
