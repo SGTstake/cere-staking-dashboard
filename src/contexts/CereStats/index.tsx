@@ -74,7 +74,6 @@ export const CereStatsProvider = ({
       query: gql`
         query EraPoints($stashAddress: String) {
           era_points(where: { stash_address: { _eq: $stashAddress } }) {
-            stash_address
             era
             points
           }
