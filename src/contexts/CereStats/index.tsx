@@ -38,7 +38,7 @@ const useApolloClient = (endpoint: Network['cereStatsEndpoint']) => {
 const useFetchEraPoints = (
   client: ApolloClient<NormalizedCacheObject> | null
 ) => {
-  const fetchEraPoints = async (address: string) => {
+  const fetchEraPoints = async (address: string, activeEraIndex: number) => {
     if (!address || !client) {
       return [];
     }
@@ -55,10 +55,20 @@ const useFetchEraPoints = (
       variables: { stashAddress: address },
     });
 
-    return data.era_points.map(({ era, points }: any) => ({
-      era,
-      reward_point: points,
-    }));
+    if (data?.era_points !== null) {
+      const list = [];
+      for (let i = activeEraIndex; i > activeEraIndex - 100; i--) {
+        list.push({
+          era: i,
+          reward_point:
+            data.era_points.find((item: any) => item.era === i)?.points ?? 0,
+        });
+      }
+      // removes last zero item and returns
+      return list.reverse().splice(0, list.length - 1);
+    }
+
+    return [];
   };
 
   return fetchEraPoints;
