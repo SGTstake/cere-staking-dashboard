@@ -39,6 +39,7 @@ export interface Network {
   };
   endpoint: string;
   subscanEndpoint: string;
+  cereStatsEndpoint: string;
   unit: string;
   units: number;
   ss58: number;

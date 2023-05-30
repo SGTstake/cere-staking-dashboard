@@ -51,7 +51,7 @@ export const CereStatsProvider = ({
 
   useEffect(() => {
     const wsLink = new WebSocketLink({
-      uri: 'wss://hasura.stats.cere.network/v1/graphql',
+      uri: network.cereStatsEndpoint,
       options: {
         reconnect: true,
       },
@@ -63,7 +63,7 @@ export const CereStatsProvider = ({
     });
 
     setClient(_client);
-  }, []);
+  }, [network]);
 
   const fetchEraPoints = async (address: string, era: number) => {
     if (!address || !client) {
