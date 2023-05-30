@@ -10,48 +10,15 @@ import { defaultCereStatsContext } from './defaults';
 import { CereStatsContextInterface } from './types';
 import { useConnect } from '../Connect';
 import { useApi } from '../Api';
-import { UIContextInterface } from '../UI/types';
-import { useUi } from '../UI';
+import { Network } from '../../types';
 
-const CereStatsContext = createContext<CereStatsContextInterface>(
-  defaultCereStatsContext
-);
-
-export const useCereStats = () => React.useContext(CereStatsContext);
-
-export const CereStatsProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  const { network, isReady } = useApi();
-  const { services }: UIContextInterface = useUi();
-  const { activeAccount } = useConnect();
-
+const useApolloClient = (endpoint: Network['cereStatsEndpoint']) => {
   const [client, setClient] =
     useState<ApolloClient<NormalizedCacheObject> | null>(null);
-  const [payouts, setPayouts] = useState([]);
-
-  // reset payouts on network switch
-  useEffect(() => {
-    setPayouts([]);
-  }, [network]);
-
-  // fetch payouts as soon as network is ready
-  useEffect(() => {
-    if (isReady) {
-      fetchPayouts();
-    }
-  }, [isReady, network, activeAccount]);
-
-  // fetch payouts on services toggle
-  useEffect(() => {
-    fetchPayouts();
-  }, [services]);
 
   useEffect(() => {
     const wsLink = new WebSocketLink({
-      uri: network.cereStatsEndpoint,
+      uri: endpoint,
       options: {
         reconnect: true,
       },
@@ -63,9 +30,13 @@ export const CereStatsProvider = ({
     });
 
     setClient(_client);
-  }, [network]);
+  }, [endpoint]);
 
-  const fetchEraPoints = async (address: string, era: number) => {
+  return client;
+};
+
+const useEraPoints = (client: ApolloClient<NormalizedCacheObject> | null) => {
+  const fetchEraPoints = async (address: string) => {
     if (!address || !client) {
       return [];
     }
@@ -82,12 +53,21 @@ export const CereStatsProvider = ({
       variables: { stashAddress: address },
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     return data.era_points.map(({ era, points }: any) => ({
       era,
       reward_point: points,
     }));
   };
+
+  return fetchEraPoints;
+};
+
+// Fetch Payouts Hook
+const usePayouts = (
+  client: ApolloClient<NormalizedCacheObject> | null,
+  activeAccount: string | null
+) => {
+  const [payouts, setPayouts] = useState([]);
 
   const normalizePayouts = (
     payoutData: { block_number: number; data: string; timestamp: number }[]
@@ -141,6 +121,31 @@ export const CereStatsProvider = ({
     // @ts-ignore
     setPayouts(normalizePayouts(data.event));
   };
+
+  useEffect(() => {
+    fetchPayouts();
+  }, [client, activeAccount]);
+
+  return payouts;
+};
+
+const CereStatsContext = createContext<CereStatsContextInterface>(
+  defaultCereStatsContext
+);
+
+export const useCereStats = () => React.useContext(CereStatsContext);
+
+export const CereStatsProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const { network } = useApi();
+  const { activeAccount } = useConnect();
+
+  const client = useApolloClient(network.cereStatsEndpoint);
+  const fetchEraPoints = useEraPoints(client);
+  const payouts = usePayouts(client, activeAccount);
 
   if (!client) {
     return null;
