@@ -82,11 +82,11 @@ export const Payouts = (props: PageProps) => {
             </h2>
           </CardHeaderWrapper>
           <div className="inner" ref={ref} style={{ minHeight }}>
-            {!services.includes('subscan') ? (
+            {!services.includes('cereStats') ? (
               <StatusLabel
                 status="active_service"
-                statusFor="subscan"
-                title="Subscan Disabled"
+                statusFor="cereStats"
+                title="CereStats Disabled"
                 topOffset="30%"
               />
             ) : (

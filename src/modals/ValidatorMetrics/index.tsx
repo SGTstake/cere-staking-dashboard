@@ -58,8 +58,8 @@ export const ValidatorMetrics = () => {
           <div className="inner" ref={ref} style={{ minHeight }}>
             <StatusLabel
               status="active_service"
-              statusFor="subscan"
-              title="Subscan Disabled"
+              statusFor="cereStats"
+              title="CereStats Disabled"
             />
             <div
               className="graph"

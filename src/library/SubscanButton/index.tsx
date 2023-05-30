@@ -30,11 +30,11 @@ export const SubscanButton = () => {
   return (
     <Wrapper
       color={
-        services.includes('subscan')
+        services.includes('cereStats')
           ? networkColors[`${network.name}-${mode}`]
           : defaultThemes.text.secondary[mode]
       }
-      opacity={services.includes('subscan') ? 1 : 0.5}
+      opacity={services.includes('cereStats') ? 1 : 0.5}
     >
       <FontAwesomeIcon
         icon={faProjectDiagram}
