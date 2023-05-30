@@ -83,7 +83,11 @@ export const CereStatsProvider = ({
       variables: { stashAddress: address },
     });
 
-    return data.era_points;
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    return data.era_points.map(({ era, points }: any) => ({
+      era,
+      reward_point: points,
+    }));
   };
 
   const normalizePayouts = (
