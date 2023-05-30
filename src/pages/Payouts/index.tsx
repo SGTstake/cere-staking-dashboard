@@ -29,7 +29,7 @@ import LastEraPayoutStatBox from './Stats/LastEraPayout';
 import { useCereStats } from '../../contexts/CereStats';
 
 export const Payouts = (props: PageProps) => {
-  const { payouts } = useCereStats();
+  const { payouts, poolClaims } = useCereStats();
   const { isSyncing, services } = useUi();
   const { inSetup } = useStaking();
   const notStaking = !isSyncing && inSetup();
@@ -43,7 +43,7 @@ export const Payouts = (props: PageProps) => {
 
   // take non-zero rewards in most-recent order
   let payoutsList: AnySubscan = [
-    ...payouts.concat([]).filter((p: AnySubscan) => p.amount > 0),
+    ...payouts.concat(poolClaims).filter((p: AnySubscan) => p.amount > 0),
   ].slice(0, MAX_PAYOUT_DAYS);
 
   // re-order rewards based on block timestamp

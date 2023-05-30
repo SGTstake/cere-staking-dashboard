@@ -50,7 +50,7 @@ export const PayoutBar = (props: PayoutBarProps) => {
   const { isSyncing } = useUi();
   const { inSetup } = useStaking();
   const { membership } = usePoolMemberships();
-  const { payouts } = useCereStats();
+  const { payouts, poolClaims } = useCereStats();
 
   const { units } = network;
   const notStaking = !isSyncing && inSetup() && !membership;
@@ -59,7 +59,7 @@ export const PayoutBar = (props: PayoutBarProps) => {
     days,
     units,
     payouts,
-    []
+    poolClaims
   );
 
   // determine color for payouts

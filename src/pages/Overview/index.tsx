@@ -33,9 +33,9 @@ import Returns from './Returns';
 export const Overview = () => {
   const { network } = useApi();
   const { units } = network;
-  const { payouts } = useCereStats();
+  const { payouts, poolClaims } = useCereStats();
 
-  const { lastReward } = formatRewardsForGraphs(14, units, payouts, []);
+  const { lastReward } = formatRewardsForGraphs(14, units, payouts, poolClaims);
 
   const PAYOUTS_HEIGHT = 380;
   const STATS_HEIGHT = 80;

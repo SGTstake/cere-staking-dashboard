@@ -151,6 +151,7 @@ export const CereStatsProvider = ({
       value={{
         fetchEraPoints,
         payouts,
+        poolClaims: [],
       }}
     >
       {children}

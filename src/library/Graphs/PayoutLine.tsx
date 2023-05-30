@@ -47,7 +47,7 @@ export const PayoutLine = (props: PayoutLineProps) => {
   const { isSyncing } = useUi();
   const { inSetup } = useStaking();
   const { membership: poolMembership } = usePoolMemberships();
-  const { payouts } = useCereStats();
+  const { payouts, poolClaims } = useCereStats();
 
   const { units } = network;
   const notStaking = !isSyncing && inSetup() && !poolMembership;
@@ -57,7 +57,7 @@ export const PayoutLine = (props: PayoutLineProps) => {
     days,
     units,
     payouts,
-    []
+    poolClaims
   );
 
   // combine payouts and pool claims into one dataset
