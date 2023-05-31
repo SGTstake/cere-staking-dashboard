@@ -57,7 +57,10 @@ const useFetchEraPoints = (
 
     if (data?.era_points !== null) {
       const list = [];
-      for (let i = activeEraIndex; i > activeEraIndex - 100; i--) {
+      // Set a constant for the number of eras we want to display
+      const ERAS_TO_SHOW = 100;
+
+      for (let i = activeEraIndex; i > activeEraIndex - ERAS_TO_SHOW; i--) {
         list.push({
           era: i,
           reward_point:
