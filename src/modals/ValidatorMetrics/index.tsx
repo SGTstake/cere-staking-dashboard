@@ -59,7 +59,7 @@ export const ValidatorMetrics = () => {
             <StatusLabel
               status="active_service"
               statusFor="cereStats"
-              title="CereStats Disabled"
+              title="Cere Stats Disabled"
             />
             <div
               className="graph"

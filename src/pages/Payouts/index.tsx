@@ -86,7 +86,7 @@ export const Payouts = (props: PageProps) => {
               <StatusLabel
                 status="active_service"
                 statusFor="cereStats"
-                title="CereStats Disabled"
+                title="Cere Stats Disabled"
                 topOffset="30%"
               />
             ) : (
