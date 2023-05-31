@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Changed
 - The `useSubscan` hook has been replaced with the `useCereStats` hook for the Reward History and Era Point Charts data source.
+
+## Removed
 - Removed dependency on `Subscan API` and simplified data management strategy by using `CereStats` API as primary data source.
 
 ## [1.0.1] - 2023-05-18
