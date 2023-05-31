@@ -71,7 +71,7 @@ export const MEDIUM_FONT_SiZE_MAX_WIDTH = 1600;
 /*
  * Toggle-able services
  */
-export const SERVICES = [];
+export const SERVICES = ['cereStats'];
 
 /*
  * Fallback config values

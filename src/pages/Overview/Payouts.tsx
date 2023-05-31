@@ -21,11 +21,11 @@ export const Payouts = () => {
 
   return (
     <div className="inner" ref={ref} style={{ minHeight }}>
-      {!services.includes('subscan') ? (
+      {!services.includes('cereStats') ? (
         <StatusLabel
           status="active_service"
-          statusFor="subscan"
-          title="Subscan Disabled"
+          statusFor="cereStats"
+          title="Cere Stats Disabled"
           topOffset="37%"
         />
       ) : (

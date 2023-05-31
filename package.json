@@ -1,9 +1,10 @@
 {
   "name": "polkadot-staking-dashboard",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "apache-2.0",
   "private": false,
   "dependencies": {
+    "@apollo/client": "^3.7.14",
     "@fortawesome/fontawesome-svg-core": "6.1.0",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -31,6 +32,7 @@
     "downshift": "^6.1.7",
     "follow-redirects": ">=1.14.8",
     "framer-motion": "^6.2.4",
+    "graphql": "^16.6.0",
     "lodash.throttle": "^4.1.1",
     "moment": "^2.29.4",
     "nth-check": ">=2.0.1",
@@ -46,6 +48,7 @@
     "react-scroll": "^1.8.6",
     "styled-components": "^5.3.3",
     "styled-theming": "^2.2.0",
+    "subscriptions-transport-ws": "^0.11.0",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4",
     "window-or-global": "^1.0.1",

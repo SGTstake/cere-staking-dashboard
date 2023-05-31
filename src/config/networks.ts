@@ -22,6 +22,7 @@ const cereMainnet = {
   },
   endpoint: 'wss://archive.mainnet.cere.network/ws',
   subscanEndpoint: '',
+  cereStatsEndpoint: 'wss://hasura.stats.cere.network/v1/graphql',
   unit: 'CERE',
   units: 10,
   ss58: 54,
@@ -51,6 +52,7 @@ const cereTestnet = {
   ...cereMainnet,
   name: 'Cere Testnet',
   endpoint: 'wss://archive.testnet.cere.network/ws',
+  cereStatsEndpoint: 'wss://hasura.stats.dev.cere.network/v1/graphql',
 };
 
 // Determine if the testnet should be included based on the REACT_APP_INCLUDE_TESTNET environment variable

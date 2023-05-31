@@ -27,7 +27,7 @@ import { useUi } from 'contexts/UI';
 import { useStaking } from 'contexts/Staking';
 import { AnySubscan } from 'types';
 import { usePoolMemberships } from 'contexts/Pools/PoolMemberships';
-import { useSubscan } from 'contexts/Subscan';
+import { useCereStats } from 'contexts/CereStats';
 import { PayoutBarProps } from './types';
 import { formatRewardsForGraphs } from './Utils';
 
@@ -50,7 +50,7 @@ export const PayoutBar = (props: PayoutBarProps) => {
   const { isSyncing } = useUi();
   const { inSetup } = useStaking();
   const { membership } = usePoolMemberships();
-  const { payouts, poolClaims } = useSubscan();
+  const { payouts, poolClaims } = useCereStats();
 
   const { units } = network;
   const notStaking = !isSyncing && inSetup() && !membership;

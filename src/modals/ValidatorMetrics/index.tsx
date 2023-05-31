@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useModal } from 'contexts/Modal';
-import { useSubscan } from 'contexts/Subscan';
+import { useCereStats } from 'contexts/CereStats';
 import { EraPoints as EraPointsGraph } from 'library/Graphs/EraPoints';
 import { SubscanButton } from 'library/SubscanButton';
 import { GraphWrapper } from 'library/Graphs/Wrappers';
@@ -16,7 +16,7 @@ import { StatusLabel } from 'library/StatusLabel';
 export const ValidatorMetrics = () => {
   const { config } = useModal();
   const { address, identity } = config;
-  const { fetchEraPoints }: any = useSubscan();
+  const { fetchEraPoints }: any = useCereStats();
   const { metrics } = useNetworkMetrics();
 
   const [list, setList] = useState([]);
@@ -58,8 +58,8 @@ export const ValidatorMetrics = () => {
           <div className="inner" ref={ref} style={{ minHeight }}>
             <StatusLabel
               status="active_service"
-              statusFor="subscan"
-              title="Subscan Disabled"
+              statusFor="cereStats"
+              title="Cere Stats Disabled"
             />
             <div
               className="graph"
