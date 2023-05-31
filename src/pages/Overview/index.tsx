@@ -11,7 +11,7 @@ import {
 } from 'Wrappers';
 import { GraphWrapper } from 'library/Graphs/Wrappers';
 import { useApi } from 'contexts/Api';
-import { useSubscan } from 'contexts/Subscan';
+import { useCereStats } from 'contexts/CereStats';
 import { SubscanButton } from 'library/SubscanButton';
 import { PageTitle } from 'library/PageTitle';
 import { formatRewardsForGraphs } from 'library/Graphs/Utils';
@@ -33,7 +33,7 @@ import Returns from './Returns';
 export const Overview = () => {
   const { network } = useApi();
   const { units } = network;
-  const { payouts, poolClaims } = useSubscan();
+  const { payouts, poolClaims } = useCereStats();
 
   const { lastReward } = formatRewardsForGraphs(14, units, payouts, poolClaims);
 

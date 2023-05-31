@@ -23,7 +23,7 @@ import { PoolMembershipsProvider } from './contexts/Pools/PoolMemberships';
 import { ActivePoolProvider } from './contexts/Pools/ActivePool';
 import { SideBarProvider } from './contexts/SideBar';
 import { StakingProvider } from './contexts/Staking';
-import { SubscanProvider } from './contexts/Subscan';
+import { CereStatsProvider } from './contexts/CereStats';
 import { ValidatorsProvider } from './contexts/Validators';
 import { UIProvider } from './contexts/UI';
 import { useTheme } from './contexts/Themes';
@@ -62,7 +62,7 @@ export const Providers = withProviders(
   ActivePoolProvider,
   ValidatorsProvider,
   UIProvider,
-  SubscanProvider,
+  CereStatsProvider,
   MenuProvider,
   TooltipProvider,
   PaletteProvider,
