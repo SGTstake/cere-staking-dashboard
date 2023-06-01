@@ -68,12 +68,14 @@ export const Payouts = (props: PageProps) => {
               <OpenAssistantIcon page="payouts" title="Payout History" />
             </h4>
             <h2>
-              {payouts.length ? (
+              {payoutsList.length ? (
                 <>
-                  {moment.unix(payouts[0].block_timestamp).format('Do MMMM')}
+                  {moment
+                    .unix(payoutsList[payoutsList.length - 1].block_timestamp)
+                    .format('Do MMMM')}
                   &nbsp;-&nbsp;
                   {moment
-                    .unix(payouts[payouts.length - 1].block_timestamp)
+                    .unix(payoutsList[0].block_timestamp)
                     .format('Do MMMM')}
                 </>
               ) : (
