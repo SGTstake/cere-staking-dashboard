@@ -226,6 +226,10 @@ export const SideMenu = () => {
             transform="grow-3"
           />
         </button>
+        <button type="button" onClick={() => togglePalette()}>
+          <PalettePosition ref={posRef} />
+          <FontAwesomeIcon icon={faPalette} transform="grow-5" />
+        </button>
         <button
           type="button"
           onClick={() =>
