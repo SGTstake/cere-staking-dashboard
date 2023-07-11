@@ -46,7 +46,7 @@ export const VALIDATOR_COMMUNITY = [
     website: 'https://cere.network',
     twitter: '@CereNetwork',
     validators: {
-      'cere mainnet': [
+      cere: [
         '6S4mrsCrqWoBAYrp2PKQNh7CYcCtyEtYpx5J626Kj5vszSyy',
         '6QhzyvZQm3dLjDmeaoUnLPXzfuTi6X1HEo6AX6gfVbC3shzD',
         '6RgfwDiQTLjgbkQ5CorrKtRtCaDABQKYsibk9MeyvzmKFrk2',
