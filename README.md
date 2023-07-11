@@ -6,8 +6,8 @@ Validators can add their identity, contact information and validator list to the
 
 To add your entity, submit a PR with the following changes:
 
-- **Thumbnail SVG:** Add your entity's thumbnail as an SVG file to [this folder](https://github.com/paritytech/polkadot-staking-dashboard/tree/master/src/config/validators/thumbnails).
-- **Entity details:** Add your entity details to the `VALIDATORS_COMMUNITY`JSON object in [this file](https://github.com/paritytech/polkadot-staking-dashboard/blob/master/src/config/validators/index.ts).
+- **Thumbnail SVG:** Add your entity's thumbnail as an SVG file to [this folder](https://github.com/Cerebellum-Network/staking-dashboard/tree/dev-cere/src/config/validators/thumbnails).
+- **Entity details:** Add your entity details to the `VALIDATORS_COMMUNITY`JSON object in [this file](https://github.com/Cerebellum-Network/staking-dashboard/blob/dev-cere/src/config/validators/index.ts).
 
 ## Entity Structure
  
@@ -28,29 +28,34 @@ The following table outlines the structure of a `VALIDATOR_COMMUNITY` entry:
  At the top of `config/validators/index.ts`, import the SVG you added in the corresponding `./thumbnails` folder as a React component:
 
 ```
-import { ReactComponent as ValidatorCentral } from './thumbnails/validatorCentral.svg';
+import { ReactComponent as Cere } from './thumbnails/cere.svg';
 ```
 
-Then add your entity details to the `VALIDATOR_COMMUNITY` object. Only provide the validator(s) for the particular network(s) you are operating in. If you have no operating validators on Kusama, for example, the `kusama` key can be omitted.
+Then add your entity details to the `VALIDATOR_COMMUNITY` object. Only provide the validator(s) for the particular network(s) you are operating in.
 
-The following example defines 2 validators on the Polkadot network, and 1 on Kusama:
+The following example defines 8 validators on the Cere Network
 
 ```
 export const VALIDATOR_COMMUNITY = [
   ...
   {
-    name: 'Validator Central',
-    Thumbnail: ValidatorCentral,
-    bio: 'Summing up my validator identity in a sentence or so. Maximum 300 characters.',
-    email: 'validatorcentral@parity.io',
-    twitter: '@ParityTech',
-    website: 'https://parity.io',
+    name: 'CERE',
+    Thumbnail: Cere,
+    bio: `Official Validators from Cere Network, the world's first Decentralized Data Cloud platform.`,
+    email: 'team@cere.network',
+    website: 'https://cere.network',
+    twitter: '@CereNetwork',
     validators: {
-      polkadot: [
-      '1hYiMW8KSfUYChzCQSPGXvMSyKVqmyvMXqohjKr3oU5PCXF', 
-      '14QSBoJMHF2Zn2XEoLNSeWgqBRr8XoKPy4BxToD6yLSeFFYe'
+      cere: [
+        '6S4mrsCrqWoBAYrp2PKQNh7CYcCtyEtYpx5J626Kj5vszSyy',
+        '6QhzyvZQm3dLjDmeaoUnLPXzfuTi6X1HEo6AX6gfVbC3shzD',
+        '6RgfwDiQTLjgbkQ5CorrKtRtCaDABQKYsibk9MeyvzmKFrk2',
+        '6TBhZAgtFc3Wr8BeNu5tdMJG1NDpxKbG2Hwf2UbVtMGyFxzN',
+        '6Pyh9zZgp4XCP338VDG7oshK7PvsAdyuBN6S2NNm7CBoCXx8',
+        '6S9tXQmPYoeBXYey8vKYi9BMbNMD8Zgqb62k7SYMNQLUbydZ',
+        '6PwAv2L43zGPEwHTb1L7LyCWv7yq2Hc4dSVYHvvi1kscCR91',
+        '6Qshjra42mLDtc9ouHzUz1bMmYXg2qasmW2xSLgendRdsYED',
       ],
-      kusama: ['FykhnPA3pn269LAcQ8VQKDgUQ8ieAaSLwJDhAVhu3dcokVR'],
     },
   },
   ...
