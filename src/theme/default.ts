@@ -55,7 +55,7 @@ export const defaultThemes: { [key: string]:any } = {
     ),
   },
   graphs: {
-    colors: [v('#ccc', '#555'), v('#eee', '#222')],
+    colors: [v('#FFB547', '#FFB547'), v('#64B6F7', '#64B6F7')],
     inactive: v('#cfcfcf', '#1a1a1a'),
     inactive2: v('#dadada', '#383838'),
     tooltip: v('#333', '#ddd'),
