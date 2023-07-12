@@ -65,11 +65,11 @@ export const VALIDATOR_COMMUNITY = [
 
 ## General Requirements
 
-| Requirement | Notes                                                                                                                                                                                                                    
-| ----------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Accuracy | Entity contact details must be working and valid.                                                                                                                                                                        |
-| Liveness | All submitted validator addresses must be discoverable as a validator on Cere Network.                                                                                                  |
-| Ordering | Please place your entity in alphabetical order within `VALIDATOR_COMMUNITY`. Validator entities (and their validators) are shuffled before being displayed in the dashboard, removing any bias associated with ordering methods. |
+| Requirement | Notes                                                                                                                                                                                                                            |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Accuracy    | Entity contact details must be working and valid.                                                                                                                                                                                |
+| Liveness    | All submitted validator addresses must be discoverable as a validator on Cere Network.                                                                                                                                           |
+| Ordering    | Please place your entity in alphabetical order within `VALIDATOR_COMMUNITY`. Validator entities (and their validators) are shuffled before being displayed in the dashboard, removing any bias associated with ordering methods. |
 
 Please submit an issue for any queries around adding your validator entity.
 
