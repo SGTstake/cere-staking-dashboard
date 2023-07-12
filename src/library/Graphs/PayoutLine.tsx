@@ -67,7 +67,7 @@ export const PayoutLine = (props: PayoutLineProps) => {
   const color = notStaking
     ? networkColorsTransparent[`${network.name}-${mode}`]
     : !poolingOnly
-    ? networkColors[`${network.name}-${mode}`]
+    ? defaultThemes.graphs.accent[mode]
     : networkColorsSecondary[`${network.name}-${mode}`];
 
   // configure graph options

@@ -65,7 +65,7 @@ export const PayoutBar = (props: PayoutBarProps) => {
   // determine color for payouts
   const colorPayouts = notStaking
     ? networkColorsTransparent[`${network.name}-${mode}`]
-    : networkColors[`${network.name}-${mode}`];
+    : defaultThemes.graphs.accent[mode];
 
   // determine color for poolClaims
   const colorPoolClaims = notStaking

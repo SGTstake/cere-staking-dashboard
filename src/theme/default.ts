@@ -55,6 +55,7 @@ export const defaultThemes: { [key: string]:any } = {
     ),
   },
   graphs: {
+    accent: v('#539461', '#539461'),
     colors: [v('#FFB547', '#FFB547'), v('#64B6F7', '#64B6F7')],
     inactive: v('#cfcfcf', '#1a1a1a'),
     inactive2: v('#dadada', '#383838'),
