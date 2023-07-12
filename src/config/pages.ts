@@ -17,6 +17,7 @@ import Pools from 'pages/Pools';
 import Browse from 'pages/Validators';
 import Favourites from 'pages/Favourites';
 import Payouts from 'pages/Payouts';
+import Community from 'pages/Community';
 import { URI_PREFIX } from 'consts';
 import { PageCategories, PagesConfig } from 'types';
 
@@ -75,6 +76,14 @@ export const PAGES_CONFIG: PagesConfig = [
     hash: '/validators',
     Entry: Browse,
     icon: faServer,
+  },
+  {
+    category: 3,
+    title: 'Community',
+    uri: `${URI_PREFIX}/community`,
+    hash: '/community',
+    Entry: Community,
+    icon: faHashtag,
   },
   {
     category: 3,
