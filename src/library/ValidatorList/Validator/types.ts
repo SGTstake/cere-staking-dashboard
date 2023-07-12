@@ -20,7 +20,7 @@ export interface IdentityProps {
 }
 
 export interface MetricsProps {
-  display: string;
+  display: any;
   address: string;
 }
 

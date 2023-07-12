@@ -6,51 +6,56 @@ Validators can add their identity, contact information and validator list to the
 
 To add your entity, submit a PR with the following changes:
 
-- **Thumbnail SVG:** Add your entity's thumbnail as an SVG file to [this folder](https://github.com/paritytech/polkadot-staking-dashboard/tree/master/src/config/validators/thumbnails).
-- **Entity details:** Add your entity details to the `VALIDATORS_COMMUNITY`JSON object in [this file](https://github.com/paritytech/polkadot-staking-dashboard/blob/master/src/config/validators/index.ts).
+- **Thumbnail SVG:** Add your entity's thumbnail as an SVG file to [this folder](https://github.com/Cerebellum-Network/staking-dashboard/tree/dev-cere/src/config/validators/thumbnails).
+- **Entity details:** Add your entity details to the `VALIDATORS_COMMUNITY`JSON object in [this file](https://github.com/Cerebellum-Network/staking-dashboard/blob/dev-cere/src/config/validators/index.ts).
 
 ## Entity Structure
  
 The following table outlines the structure of a `VALIDATOR_COMMUNITY` entry:
 
-| Element | Key | Required | Notes | Example
-| ------- | --- | -------- | ----- | ------- |
-| Entity Name  | `name` | Yes | The chosen name of your entity. | `Validator Central` |
-| Thumbnail SVG  | `Thumbnail` | Yes | Must be a square SVG file with a non-transparent background, to ensure compatibility with both light and dark theming.  | *See Below* | 
-| Bio  | `bio` | No | A short description of your entity. Maximum 300 characters. | `Summing up my validator identity in a sentence or so.` |
-| Email Address  | `email` | No | A public email address representing your entity. | `validatorcentral@parity.io` |
-| Twitter Handle | `twitter` | No | The Twitter handle representing your entity.  | `@ParityTech` |
-| Website URL | `website` | No |  A live and vlid secure URL to your website. | `https://parity.io` |
-| Validator List | `validators` | Yes |  A list of validators grouped by network. At least 1 validator in 1 network must be defined. | *See Below* |
+| Element        | Key          | Required | Notes                                                                                                                  | Example                                                 |
+|----------------|--------------|----------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| Entity Name    | `name`       | Yes      | The chosen name of your entity.                                                                                        | `Validator Central`                                     |
+| Thumbnail SVG  | `Thumbnail`  | Yes      | Must be a square SVG file with a non-transparent background, to ensure compatibility with both light and dark theming. | *See Below*                                             | 
+| Bio            | `bio`        | No       | A short description of your entity. Maximum 300 characters.                                                            | `Summing up my validator identity in a sentence or so.` |
+| Email Address  | `email`      | No       | A public email address representing your entity.                                                                       | `team@cere.network`                                     |
+| Twitter Handle | `twitter`    | No       | The Twitter handle representing your entity.                                                                           | `@CereNetwork'`                                         |
+| Website URL    | `website`    | No       | A live and vlid secure URL to your website.                                                                            | `https://cere.network`                                  |
+| Validator List | `validators` | Yes      | A list of validators grouped by network. At least 1 validator in 1 network must be defined.                            | *See Below*                                             |
 
 ## Example Entity
 
  At the top of `config/validators/index.ts`, import the SVG you added in the corresponding `./thumbnails` folder as a React component:
 
 ```
-import { ReactComponent as ValidatorCentral } from './thumbnails/validatorCentral.svg';
+import { ReactComponent as Cere } from './thumbnails/cere.svg';
 ```
 
-Then add your entity details to the `VALIDATOR_COMMUNITY` object. Only provide the validator(s) for the particular network(s) you are operating in. If you have no operating validators on Kusama, for example, the `kusama` key can be omitted.
+Then add your entity details to the `VALIDATOR_COMMUNITY` object. Only provide the validator(s) for the particular network(s) you are operating in.
 
-The following example defines 2 validators on the Polkadot network, and 1 on Kusama:
+The following example defines 8 validators on the Cere Network
 
 ```
 export const VALIDATOR_COMMUNITY = [
   ...
   {
-    name: 'Validator Central',
-    Thumbnail: ValidatorCentral,
-    bio: 'Summing up my validator identity in a sentence or so. Maximum 300 characters.',
-    email: 'validatorcentral@parity.io',
-    twitter: '@ParityTech',
-    website: 'https://parity.io',
+    name: 'CERE',
+    Thumbnail: Cere,
+    bio: `Official Validators from Cere Network, the world's first Decentralized Data Cloud platform.`,
+    email: 'team@cere.network',
+    website: 'https://cere.network',
+    twitter: '@CereNetwork',
     validators: {
-      polkadot: [
-      '1hYiMW8KSfUYChzCQSPGXvMSyKVqmyvMXqohjKr3oU5PCXF', 
-      '14QSBoJMHF2Zn2XEoLNSeWgqBRr8XoKPy4BxToD6yLSeFFYe'
+      cere: [
+        '6S4mrsCrqWoBAYrp2PKQNh7CYcCtyEtYpx5J626Kj5vszSyy',
+        '6QhzyvZQm3dLjDmeaoUnLPXzfuTi6X1HEo6AX6gfVbC3shzD',
+        '6RgfwDiQTLjgbkQ5CorrKtRtCaDABQKYsibk9MeyvzmKFrk2',
+        '6TBhZAgtFc3Wr8BeNu5tdMJG1NDpxKbG2Hwf2UbVtMGyFxzN',
+        '6Pyh9zZgp4XCP338VDG7oshK7PvsAdyuBN6S2NNm7CBoCXx8',
+        '6S9tXQmPYoeBXYey8vKYi9BMbNMD8Zgqb62k7SYMNQLUbydZ',
+        '6PwAv2L43zGPEwHTb1L7LyCWv7yq2Hc4dSVYHvvi1kscCR91',
+        '6Qshjra42mLDtc9ouHzUz1bMmYXg2qasmW2xSLgendRdsYED',
       ],
-      kusama: ['FykhnPA3pn269LAcQ8VQKDgUQ8ieAaSLwJDhAVhu3dcokVR'],
     },
   },
   ...
@@ -60,20 +65,20 @@ export const VALIDATOR_COMMUNITY = [
 
 ## General Requirements
 
-| Requirement | Notes
-| ----------- | ----- |
-| Accuracy | Entity contact details must be working and valid. |
-| Liveness | All submitted validator addresses must be discoverable as a validator on the network in question - whether Polkadot or Kusama. |
-| Ordering | Please place your entity in alphabetical order within `VALIDATOR_COMMUNITY`. Validator entities (and their validators) are shuffled before being displayed in the dashboard, removing any bias associated with ordering methods. |
+| Requirement | Notes                                                                                                                                                                                                                            |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Accuracy    | Entity contact details must be working and valid.                                                                                                                                                                                |
+| Liveness    | All submitted validator addresses must be discoverable as a validator on Cere Network.                                                                                                                                           |
+| Ordering    | Please place your entity in alphabetical order within `VALIDATOR_COMMUNITY`. Validator entities (and their validators) are shuffled before being displayed in the dashboard, removing any bias associated with ordering methods. |
 
 Please submit an issue for any queries around adding your validator entity.
 
 # Contribution Guide
 
 ## Introduction
-This section aims to familiarise developers to the Polkadot Staking Dashboard [[GitHub](https://github.com/paritytech/polkadot-staking-dashboard), [Demo](https://paritytech.github.io/polkadot-staking-dashboard/#/overview)] for the purpose of contributing to the project.
+This section aims to familiarise developers to the Cere Staking Dashboard [[GitHub](https://github.com/Cerebellum-Network/staking-dashboard), [Demo](https://paritytech.github.io/polkadot-staking-dashboard/#/overview)] for the purpose of contributing to the project.
 
-Reach out to ross@parity.io for clarification of any content within this document.
+Reach out to community@cere.io for clarification of any content within this document.
 
 ## Major Packages Used
 
