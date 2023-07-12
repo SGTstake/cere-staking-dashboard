@@ -13,15 +13,15 @@ To add your entity, submit a PR with the following changes:
  
 The following table outlines the structure of a `VALIDATOR_COMMUNITY` entry:
 
-| Element | Key | Required | Notes | Example
-| ------- | --- | -------- | ----- | ------- |
-| Entity Name  | `name` | Yes | The chosen name of your entity. | `Validator Central` |
-| Thumbnail SVG  | `Thumbnail` | Yes | Must be a square SVG file with a non-transparent background, to ensure compatibility with both light and dark theming.  | *See Below* | 
-| Bio  | `bio` | No | A short description of your entity. Maximum 300 characters. | `Summing up my validator identity in a sentence or so.` |
-| Email Address  | `email` | No | A public email address representing your entity. | `validatorcentral@parity.io` |
-| Twitter Handle | `twitter` | No | The Twitter handle representing your entity.  | `@ParityTech` |
-| Website URL | `website` | No |  A live and vlid secure URL to your website. | `https://parity.io` |
-| Validator List | `validators` | Yes |  A list of validators grouped by network. At least 1 validator in 1 network must be defined. | *See Below* |
+| Element        | Key          | Required | Notes                                                                                                                  | Example                                                 |
+|----------------|--------------|----------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| Entity Name    | `name`       | Yes      | The chosen name of your entity.                                                                                        | `Validator Central`                                     |
+| Thumbnail SVG  | `Thumbnail`  | Yes      | Must be a square SVG file with a non-transparent background, to ensure compatibility with both light and dark theming. | *See Below*                                             | 
+| Bio            | `bio`        | No       | A short description of your entity. Maximum 300 characters.                                                            | `Summing up my validator identity in a sentence or so.` |
+| Email Address  | `email`      | No       | A public email address representing your entity.                                                                       | `validatorcentral@parity.io`                            |
+| Twitter Handle | `twitter`    | No       | The Twitter handle representing your entity.                                                                           | `@ParityTech`                                           |
+| Website URL    | `website`    | No       | A live and vlid secure URL to your website.                                                                            | `https://parity.io`                                     |
+| Validator List | `validators` | Yes      | A list of validators grouped by network. At least 1 validator in 1 network must be defined.                            | *See Below*                                             |
 
 ## Example Entity
 
