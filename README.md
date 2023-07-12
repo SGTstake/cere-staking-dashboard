@@ -65,10 +65,10 @@ export const VALIDATOR_COMMUNITY = [
 
 ## General Requirements
 
-| Requirement | Notes
-| ----------- | ----- |
-| Accuracy | Entity contact details must be working and valid. |
-| Liveness | All submitted validator addresses must be discoverable as a validator on the network in question - whether Polkadot or Kusama. |
+| Requirement | Notes                                                                                                                                                                                                                    
+| ----------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Accuracy | Entity contact details must be working and valid.                                                                                                                                                                        |
+| Liveness | All submitted validator addresses must be discoverable as a validator on Cere Network.                                                                                                  |
 | Ordering | Please place your entity in alphabetical order within `VALIDATOR_COMMUNITY`. Validator entities (and their validators) are shuffled before being displayed in the dashboard, removing any bias associated with ordering methods. |
 
 Please submit an issue for any queries around adding your validator entity.
@@ -76,9 +76,9 @@ Please submit an issue for any queries around adding your validator entity.
 # Contribution Guide
 
 ## Introduction
-This section aims to familiarise developers to the Polkadot Staking Dashboard [[GitHub](https://github.com/paritytech/polkadot-staking-dashboard), [Demo](https://paritytech.github.io/polkadot-staking-dashboard/#/overview)] for the purpose of contributing to the project.
+This section aims to familiarise developers to the Cere Staking Dashboard [[GitHub](https://github.com/Cerebellum-Network/staking-dashboard), [Demo](https://paritytech.github.io/polkadot-staking-dashboard/#/overview)] for the purpose of contributing to the project.
 
-Reach out to ross@parity.io for clarification of any content within this document.
+Reach out to community@cere.io for clarification of any content within this document.
 
 ## Major Packages Used
 
