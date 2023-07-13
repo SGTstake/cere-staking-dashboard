@@ -135,7 +135,7 @@ export const BalanceGraph = () => {
     : [
         defaultThemes.graphs.colors[1][mode],
         defaultThemes.graphs.colors[0][mode],
-        networkColors[`${network.name}-${mode}`],
+        defaultThemes.graphs.accent[mode],
         networkColorsSecondary[`${network.name}-${mode}`],
       ];
 

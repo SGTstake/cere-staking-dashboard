@@ -2,10 +2,17 @@
  * SPDX-License-Identifier: Apache-2.0 */
 
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Human Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/fonts/WorkSans-VariableFont_wght.ttf');
+  src: url('../public/fonts/HumanSans/HumanSans-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Human Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../public/fonts/HumanSans/HumanSans-Medium.otf');
 }
 
 /* global font size */
@@ -27,14 +34,14 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Work Sans', 'sans-serif', sans-serif;
+  font-family: 'Human Sans', 'sans-serif', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
 h1 {
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.6rem;
   font-variation-settings: 'wght' 600;
   margin: 0 0 0.4rem 0;
@@ -42,20 +49,20 @@ h1 {
 
 h2 {
   font-variation-settings: 'wght' 580;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.5rem;
 }
 
 h3 {
   font-variation-settings: 'wght' 560;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.55rem;
 }
 
 h4 {
   font-variation-settings: 'wght' 540;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.05rem;
   line-height: 1.6rem;
 }
@@ -63,7 +70,7 @@ h4 {
 h5 {
   color: #333;
   font-variation-settings: 'wght' 540;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 0.89rem;
   margin: 1rem 0;
 }
@@ -81,7 +88,7 @@ a {
 }
 
 button {
-  font-family: 'Work Sans', 'sans-serif', sans-serif;
+  font-family: 'Human Sans', 'sans-serif', sans-serif;
   background: none;
   box-shadow: none;
   border: none;
