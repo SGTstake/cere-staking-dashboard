@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2023-07-13
+
+## Added
+
+- Comprehensive application of a custom UI/UX theme, encompassing:
+    - Incorporation of specific colors for graph representation
+    - Accentuation of color for PayoutBar and PayoutLine elements
+    - Integration of the HumanSans typography
+    - Refinement of colors assigned to BalanceGraph and Bounded components
+    - Modification of the primary color dedicated to the light theme
+    - Refreshment of the Cere Icon and Logo aesthetics
+
+## Changed
+
+- The functionality to toggle between light and dark themes has been reinstated
+- Cere icon in the validator configuration has been updated
+
 ## [1.2.1] - 2023-07-12
 
 ## Changed
