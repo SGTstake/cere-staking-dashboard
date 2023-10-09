@@ -37,9 +37,7 @@ export const VALIDATOR_COMMUNITY = [
     website: '',
     twitter: '@xameyz',
     validators: {
-      cere: [
-        '6TYC5go4hQ85NxmGK8c658cmJozxeohKfp6YbDGC5r1HJ6nZ'
-      ],
+      cere: ['6TYC5go4hQ85NxmGK8c658cmJozxeohKfp6YbDGC5r1HJ6nZ'],
     },
-  }
+  },
 ];
