@@ -7,6 +7,7 @@
  */
 import { ReactComponent as Cere } from './thumbnails/cere.svg';
 import { ReactComponent as XameyzIdentity } from './thumbnails/xameyz.svg';
+import { ReactComponent as AnyValid } from './thumbnails/anyvalid.svg';
 
 export const VALIDATOR_COMMUNITY = [
   {
@@ -38,6 +39,17 @@ export const VALIDATOR_COMMUNITY = [
     twitter: '@xameyz',
     validators: {
       cere: ['6TYC5go4hQ85NxmGK8c658cmJozxeohKfp6YbDGC5r1HJ6nZ'],
+    },
+  },
+  {
+    name: 'AnyValid',
+    Thumbnail: AnyValid,
+    bio: `Professional Proof-of-Stake Networks Validation Services`,
+    email: 'mail@anyvalid.com',
+    website: 'https://anyvalid.com',
+    twitter: '@anyvalid',
+    validators: {
+      cere: ['6UDVCKB9opndqcRAxTpTvKFTFXUwvE36aYnp1bNyVV3Cfh16'],
     },
   },
 ];
