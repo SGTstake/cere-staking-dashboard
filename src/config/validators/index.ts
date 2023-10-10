@@ -8,6 +8,7 @@
 import { ReactComponent as Cere } from './thumbnails/cere.svg';
 import { ReactComponent as XameyzIdentity } from './thumbnails/xameyz.svg';
 import { ReactComponent as AnyValid } from './thumbnails/anyvalid.svg';
+import { ReactComponent as SerGo } from './thumbnails/SerGo.svg';
 
 export const VALIDATOR_COMMUNITY = [
   {
@@ -50,6 +51,17 @@ export const VALIDATOR_COMMUNITY = [
     twitter: '@anyvalid',
     validators: {
       cere: ['6UDVCKB9opndqcRAxTpTvKFTFXUwvE36aYnp1bNyVV3Cfh16'],
+    },
+  },
+  {
+    name: 'SerGo',
+    Thumbnail: SerGo,
+    bio: `We validate with expertise, you earn with confidence.`,
+    email: 'contact@sergo.dev',
+    website: 'https://sergo.dev',
+    twitter: '',
+    validators: {
+      cere: ['6SpjH8swCtFwmntQmdikMWyDKgr59q1cLauePYc2iqwwe6Bv'],
     },
   },
 ];
