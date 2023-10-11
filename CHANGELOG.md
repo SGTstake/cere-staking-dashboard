@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2023-10-11
+
+## Added
+
+- Validators Community List Update: Added AnyValid, SerGo and Xameyz
+
 ## [1.3.0] - 2023-07-13
 
 ## Added
@@ -26,14 +32,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Changed
 
-- Updated README: Revised the instructions for Liveness under General Requirements and updated the Contribution Guide. Additionally, included a feedback email for any questions or concerns regarding the content within the project.
+- Updated README: Revised the instructions for Liveness under General Requirements and updated the Contribution Guide.
+  Additionally, included a feedback email for any questions or concerns regarding the content within the project.
 
-## [1.2.0] - 2023-07-11 
+## [1.2.0] - 2023-07-11
 
 ## Changed
 
-- Enabled the Community Page. 
-- Updated the instructions for setting up the **Validator Entity** in the README. 
+- Enabled the Community Page.
+- Updated the instructions for setting up the **Validator Entity** in the README.
 - Improved the display of validators' identities.
 
 ## Added
@@ -50,26 +57,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Added
 
-- Added `CereStatsProvider` feature to fetch data from CereStats API, providing reward history and era points for validators.
-- Implemented custom hooks, `useFetchEraPoints` and `usePayouts`, to manage data from CereStats API. `useFetchEraPoints` retrieves era points for a specific validator, while `usePayouts` manages reward history.
+- Added `CereStatsProvider` feature to fetch data from CereStats API, providing reward history and era points for
+  validators.
+- Implemented custom hooks, `useFetchEraPoints` and `usePayouts`, to manage data from CereStats API. `useFetchEraPoints`
+  retrieves era points for a specific validator, while `usePayouts` manages reward history.
 
 ## Changed
 
-- The `useSubscan` hook has been replaced with the `useCereStats` hook for the Reward History and Era Point Charts data source.
+- The `useSubscan` hook has been replaced with the `useCereStats` hook for the Reward History and Era Point Charts data
+  source.
 
 ## Removed
 
-- Removed dependency on `Subscan API` and simplified data management strategy by using `CereStats` API as primary data source.
+- Removed dependency on `Subscan API` and simplified data management strategy by using `CereStats` API as primary data
+  source.
 
 ## [1.0.1] - 2023-05-18
 
 ## Added
 
-- Improved network initialization and error handling. Prevents application crashes caused by incorrect localStorage network. Added default network for this scenario.
+- Improved network initialization and error handling. Prevents application crashes caused by incorrect localStorage
+  network. Added default network for this scenario.
 
 ### Changed
 
-- Improved workflow for deploying to development, staging, and production environments. Fixed issue with `REACT_APP_INCLUDE_TESTNET` variable.
+- Improved workflow for deploying to development, staging, and production environments. Fixed issue
+  with `REACT_APP_INCLUDE_TESTNET` variable.
 - Set the `REACT_APP_INCLUDE_TESTNET` environment variable to `false` for the Stage environment.
 
 ## [1.0.0] - 2023-05-17
