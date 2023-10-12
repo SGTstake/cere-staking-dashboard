@@ -64,4 +64,15 @@ export const VALIDATOR_COMMUNITY = [
       cere: ['6SpjH8swCtFwmntQmdikMWyDKgr59q1cLauePYc2iqwwe6Bv'],
     },
   },
+  {
+    name: 'SGTstake',
+    Thumbnail: SGTstake,
+    bio: `Professional validator service`,
+    email: 'adorid@sgtstake.com',
+    website: 'https://sgtstake.com',
+    twitter: '@SgTstake',
+    validators: {
+      cere: ['6Qee9AkfHVxEv5jYYoXypQfknz8VmBiu8GiGuspp7yxchUvG'],
+    },
+  },
 ];
